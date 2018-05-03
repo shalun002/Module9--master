@@ -11,7 +11,8 @@ namespace Module9 // Наследование
     {
         static void Main(string[] args)
         {
-          
+            HDD hdd = new HDD();
+            
         }
     }
 }

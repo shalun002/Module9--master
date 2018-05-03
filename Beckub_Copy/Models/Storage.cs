@@ -8,9 +8,19 @@ namespace Beckub_Copy.Models
 {
     public abstract class Storage
     {
+        public Storage() : this(" ") { }
+
+        public Storage(string Name) : this(Name, " ") { }
+
+        public Storage(string Name, string Model)
+        {
+            this.Name = Name;
+            this.Model = Model;
+        }
+
         public int Count { get; set; }
 
-        public int Time { get; set; }
+        static int Time { get; set; }
 
         protected string Name { get; set; }
 
@@ -26,9 +36,11 @@ namespace Beckub_Copy.Models
 
         public virtual void PrintInfo()
         {
-            Console.WriteLine("Name -" + Name);
-            Console.WriteLine("Model -" + Model);
-
+            Console.WriteLine("{0} ({1})", Name, Model);
+        }
+        public static void PrintTime()
+        {
+            Console.WriteLine("{0} ({1})", Time);
         }
     }
 }
