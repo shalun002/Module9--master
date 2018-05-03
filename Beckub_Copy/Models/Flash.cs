@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace Beckub_Copy.Models
 {
-    /*Каждый носитель информации является объектом соответствующего класса: 
-●	Flash-память — класс «Flash»;
-●	класс DVD-диск — класс «DVD»;
-●	класс съемный HDD — класс «HDD».
-Все три класса являются производными от абстрактного класса «Носитель информации» — класс «Storage». Базовый класс («Storage») содержит следующие закрытые поля:
-*/
+    public enum TypeDevice { USB2, USB3}
 
-        public enum TypeDevice { USB2, USB3}
     public class Flash : Storage
     {
         public int SpeedFlash { get; private set; }
+
         public double MemoryFlash { get; set; }
+
         public TypeDevice typeDevice {
             get
             {
@@ -26,9 +22,7 @@ namespace Beckub_Copy.Models
             set
             {
                 if (TypeDevice.USB2 == value)
-                {
                     SpeedFlash = 2000;
-                }
                 else
                     SpeedFlash = 3000;
             }
@@ -41,9 +35,11 @@ namespace Beckub_Copy.Models
 
         public override void PrintInfo()
         {
-            throw new NotImplementedException();
-        }
+            base.PrintInfo(); // вызываем то, что есть в Printinfo в базовом классе
 
-        
+            Console.WriteLine("Speed Flash -" + SpeedFlash);
+            Console.WriteLine("Memory Flash -" + MemoryFlash);
+            Console.WriteLine("Type Device -" + typeDevice);
+        }
     }
 }

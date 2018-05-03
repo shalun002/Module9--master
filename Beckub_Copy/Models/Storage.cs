@@ -6,22 +6,14 @@ using System.Threading.Tasks;
 
 namespace Beckub_Copy.Models
 {
-    /*
-     * ●	наименование носителя;
-●	модель.
-Класс обладает всеми необходимыми свойствами для доступа к полям, а также абстрактными методами: 
-●	получение объема памяти;
-●	копирование данных (файлов/папок) на устройство,
-●	получение информации о свободном объеме памяти на устройстве;
-●	получение общей/полной информации об устройстве.
-
-*/
     public abstract class Storage
     {
-        public int Count { get; set; } // колличество устройств
+        public int Count { get; set; }
+
         public int Time { get; set; }
 
         protected string Name { get; set; }
+
         public string Model { get; protected set; }
 
         public abstract double GetMemory();
@@ -32,7 +24,11 @@ namespace Beckub_Copy.Models
             Time = 2;
         }
 
-  
-        public abstract void PrintInfo();
+        public virtual void PrintInfo()
+        {
+            Console.WriteLine("Name -" + Name);
+            Console.WriteLine("Model -" + Model);
+
+        }
     }
 }
