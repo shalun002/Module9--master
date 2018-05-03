@@ -13,13 +13,14 @@ namespace Module9
         {
             hdd = new List<HDD>();
             dvd = new List<DVD>();
-            flash = new List<Flash>();
+            fl = new List<Flash>();
         }
 
-        public List <HDD> hdd;
+        public List<HDD> hdd;
         public List <DVD> dvd;
-        public List <Flash> flash;
+        public List<Flash> fl;
         private Random rand = new Random();
+
         public void generateFlash()
         {
             for (int i = 0; i < rand.Next(1, 20); i++)
@@ -27,6 +28,7 @@ namespace Module9
                 Flash flash = new Flash(string.Format("Model #{0}", rand.Next()));
                 flash.MemoryFlash = rand.Next(2000, 128000);
                 flash.typeDevice = (TypeDevice)rand.Next(0, 1);
+                fl.Add(flash);
             }
         }
     }

@@ -68,9 +68,8 @@ namespace Beckub_Copy.Models
               return Int32.Parse( Math.Ceiling((MemirtData / flash.MemoryFlash)).ToString()); // конвертор БЛЯ + округлитель
         }
 
-        public void getCount(List<Flash> flash, double MemoriData)
+        public void getCount(ref List<Flash> flash, double MemoriData)
         {
-
             foreach (Flash item in flash)
             {
                item.Count =  DeviceCounter( item, MemoriData);
@@ -82,9 +81,8 @@ namespace Beckub_Copy.Models
             return  Int32.Parse(Math.Ceiling((MemirtData / dvd.GetMemory())).ToString()); // конвертор БЛЯ + округлитель   
         }
 
-        public void getCount(List<DVD> dvd, double MemoriData)
+        public void getCount(ref List<DVD> dvd, double MemoriData)
         {
-
             foreach (DVD item in dvd)
             {
                 item.Count = DeviceCounter(item, MemoriData);
@@ -96,9 +94,8 @@ namespace Beckub_Copy.Models
             return  Int32.Parse(Math.Ceiling((MemirtData / hdd.GetMemory())).ToString()); // конвертор БЛЯ + округлитель
         }
 
-        public void getCount(List<HDD> hdd, double MemoriData)
+        public void getCount(ref List<HDD> hdd, double MemoriData)
         {
-
             foreach (HDD item in hdd)
             {
                 item.Count = DeviceCounter(item, MemoriData);

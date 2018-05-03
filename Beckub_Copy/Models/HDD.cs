@@ -33,10 +33,10 @@ namespace Beckub_Copy.Models
         {
             base.PrintInfo(); // вызываем то, что есть в Printinfo в базовом классе
 
-            Console.WriteLine("Speed HDD -" + SpeedHDD);
-            Console.WriteLine("Type device -" + typeDevice);
-            Console.WriteLine("Claster -" + typeDevice);
-            Console.WriteLine("Claster Momory - " + ClasterMomory);
+            Console.WriteLine("Speed HDD = " + SpeedHDD);
+            Console.WriteLine("Type device = " + typeDevice);
+            Console.WriteLine("Claster = " + typeDevice);
+            Console.WriteLine("Claster Momory = " + ClasterMomory);
         }
         public override void Copy() //●	копирование информации на устройства;
         {

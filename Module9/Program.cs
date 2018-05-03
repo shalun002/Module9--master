@@ -11,8 +11,25 @@ namespace Module9 // Наследование
     {
         static void Main(string[] args)
         {
-            HDD hdd = new HDD();
-            
+            Console.WriteLine("Введите объем данных");
+            double temp = Double.Parse(Console.ReadLine());
+
+            GenerateDevice gd = new GenerateDevice();
+            gd.generateFlash();
+
+            Service serv = new Service();
+            double totalMemory = serv.CalculateTotalMemory( new List<HDD>(), gd.fl, new List<DVD>());
+            Console.WriteLine("Общий объем флешек = {0} ({1})", totalMemory, gd.fl.Count);
+
+            TimeSpan time = serv.CalculateTotalTime(gd.fl);
+            Console.WriteLine(time.TotalMinutes);
+
+            serv.getCount(ref gd.fl, temp);
+            foreach (Flash item in gd.fl)
+            {
+                item.PrintInfo();
+                Console.WriteLine();
+            }
         }
     }
 }
