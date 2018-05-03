@@ -48,9 +48,9 @@ namespace Beckub_Copy.Models
         {
             base.PrintInfo(); // вызываем то, что есть в Printinfo в базовом классе
 
-            Console.WriteLine("Speed Write -" + SpeedWrite);
-            Console.WriteLine("Speed Read -" + SpeedRead);
-            Console.WriteLine("Type DVD -" + typeDVD);
+            Console.WriteLine("Speed Write = " + SpeedWrite);
+            Console.WriteLine("Speed Read = " + SpeedRead);
+            Console.WriteLine("Type DVD = " + typeDVD);
         }
     }
 }

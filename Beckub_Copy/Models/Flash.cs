@@ -55,9 +55,9 @@ namespace Beckub_Copy.Models
         {
             base.PrintInfo(); // вызываем то, что есть в Printinfo в базовом классе
 
-            Console.WriteLine("Speed Flash -" + SpeedFlash);
-            Console.WriteLine("Memory Flash -" + MemoryFlash);
-            Console.WriteLine("Type Device -" + typeDevice);
+            Console.WriteLine("Speed Flash = " + SpeedFlash);
+            Console.WriteLine("Memory Flash = " + MemoryFlash);
+            Console.WriteLine("Type Device = " + typeDevice);
         }
     }
 }
