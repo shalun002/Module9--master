@@ -14,6 +14,7 @@ namespace Beckub_Copy.Models
         {
 
         }
+
         public Flash() : this(0) { }
 
         public Flash(int SpeedFlash) : this(SpeedFlash, 0) { }

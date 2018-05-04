@@ -11,6 +11,11 @@ namespace Beckub_Copy.Models
 
     public class DVD : Storage
     {
+        public DVD(string model) : base(" ", model)
+        {
+
+        }
+
         public DVD() : this(0) { }
 
         public DVD(int SpeedWrite) : this(SpeedWrite, TypeDVD.Oneside){ }
@@ -22,14 +27,10 @@ namespace Beckub_Copy.Models
         }
 
         public int SpeedWrite { get; set; }
-        public int SpeedRead { get; set; }
-        public TypeDVD typeDVD { get; set; }
 
-        public DVD(string name)
-        {
-            base.Name = name;
-            base.Model = "gfdkfl;k";
-        }
+        public int SpeedRead { get; set; }
+
+        public TypeDVD typeDVD { get; set; }
 
         public override double GetMemory()
         {
@@ -39,17 +40,13 @@ namespace Beckub_Copy.Models
                 return 9.4;
         }
 
-        public override void Copy()
-        {
-            // base.Copy();
-        }
+        public override void Copy() { }
 
         public override void PrintInfo()
         {
             base.PrintInfo(); // вызываем то, что есть в Printinfo в базовом классе
 
             Console.WriteLine("Speed Write = " + SpeedWrite);
-            Console.WriteLine("Speed Read = " + SpeedRead);
             Console.WriteLine("Type DVD = " + typeDVD);
         }
     }
